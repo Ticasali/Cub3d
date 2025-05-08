@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+         #
+#    By: ticasali <ticasali@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/25 01:28:43 by ticasali          #+#    #+#              #
-#    Updated: 2025/05/08 15:12:17 by dderny           ###   ########.fr        #
+#    Updated: 2025/05/08 16:58:39 by ticasali         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ DEPS = 				$(SRCS:$(DIR_SRCS)/%.c=$(DIR_OBJS)/%.d)
 -include $(DEPS)
 
 CFLAGS =			-Wall -Wextra -Werror -MMD -g3 -I./include -I./libft/headers
-LIBS =				-L./libft -lft -lreadline
+LIBS =				-L./libft -lft -Iminilibx-linux -lXext -lX11 -lm -lz
 
 all:				libft
 					$(MAKE) -j $(nproc) $(NAME)
