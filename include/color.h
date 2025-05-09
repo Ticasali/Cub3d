@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   color.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/08 15:20:25 by dderny            #+#    #+#             */
-/*   Updated: 2025/05/09 01:21:36 by dderny           ###   ########.fr       */
+/*   Created: 2025/05/09 02:30:13 by dderny            #+#    #+#             */
+/*   Updated: 2025/05/09 02:36:21 by dderny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
-# include "mlx.h"
-# include <mlx_int.h>
+#ifndef COLOR_H
+# define COLOR_H
 
-typedef struct s_cub3d
+typedef union u_color
 {
-	int			width;
-	int			height;
-	t_img		*buffer;
-	void		*mlx;
-	void		*win;
-}	t_cub3d;
+	unsigned int	rgb;
+	struct
+	{
+		unsigned char	b;
+		unsigned char	g;
+		unsigned char	r;
+		unsigned char	a;
+	};
+}			t_color;
 
 #endif

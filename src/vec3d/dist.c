@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   dist.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/08 15:20:25 by dderny            #+#    #+#             */
-/*   Updated: 2025/05/09 01:21:36 by dderny           ###   ########.fr       */
+/*   Created: 2025/05/09 02:16:44 by dderny            #+#    #+#             */
+/*   Updated: 2025/05/09 02:24:32 by dderny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
-# include "mlx.h"
-# include <mlx_int.h>
+#include "vec3d.h"
+#include <math.h>
 
-typedef struct s_cub3d
+double	vec3d_dist(t_vec3d a, t_vec3d b)
 {
-	int			width;
-	int			height;
-	t_img		*buffer;
-	void		*mlx;
-	void		*win;
-}	t_cub3d;
-
-#endif
+	return (sqrt(vec3d_sqrlen(vec3d_sub(a, b))));
+}

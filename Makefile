@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ticasali <ticasali@student.42.fr>          +#+  +:+       +#+         #
+#    By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/25 01:28:43 by ticasali          #+#    #+#              #
-#    Updated: 2025/05/08 16:58:39 by ticasali         ###   ########.fr        #
+#    Updated: 2025/05/09 02:24:10 by dderny           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,24 @@ NAME =				cub3D
 
 DIR_SRCS =			src
 
-SRCS =				$(DIR_SRCS)/main.c 				\
+SRCS =				$(DIR_SRCS)/vec3d/add.c 				\
+				$(DIR_SRCS)/vec3d/cross.c 				\
+				$(DIR_SRCS)/vec3d/dist.c 				\
+				$(DIR_SRCS)/vec3d/sqrdist.c 				\
+				$(DIR_SRCS)/vec3d/dist.c 				\
+				$(DIR_SRCS)/vec3d/div.c 				\
+				$(DIR_SRCS)/vec3d/dot.c 				\
+				$(DIR_SRCS)/vec3d/equal.c 				\
+				$(DIR_SRCS)/vec3d/iszero.c 				\
+				$(DIR_SRCS)/vec3d/len.c 				\
+				$(DIR_SRCS)/vec3d/lerp.c 				\
+				$(DIR_SRCS)/vec3d/mul.c 				\
+				$(DIR_SRCS)/vec3d/reflect.c 				\
+				$(DIR_SRCS)/vec3d/scale.c 				\
+				$(DIR_SRCS)/vec3d/slerp.c 				\
+				$(DIR_SRCS)/vec3d/sqrlen.c 				\
+				$(DIR_SRCS)/vec3d/sub.c 				\
+				$(DIR_SRCS)/main.c 				\
 
 DIR_OBJS =			.objs
 
@@ -23,14 +40,15 @@ DEPS = 				$(SRCS:$(DIR_SRCS)/%.c=$(DIR_OBJS)/%.d)
 
 -include $(DEPS)
 
-CFLAGS =			-Wall -Wextra -Werror -MMD -g3 -I./include -I./libft/headers
-LIBS =				-L./libft -lft -Iminilibx-linux -lXext -lX11 -lm -lz
+CFLAGS =			-Wall -Wextra -Werror -MMD -march=native -ffast-math -O3 -g3 -I./include -I./libft/headers -Iminilibx-linux
+LIBS =				-L./libft -lft -L./minilibx-linux -lmlx -lXext -lX11 -lm -lz
 
-all:				libft
+all:				libs
 					$(MAKE) -j $(nproc) $(NAME)
 
-libft:
+libs:
 					@$(MAKE) -C libft debug
+					@$(MAKE) -C minilibx-linux
 
 $(DIR_OBJS)/%.o:	$(DIR_SRCS)/%.c
 					@mkdir -p $(dir $@)
@@ -40,11 +58,12 @@ $(DIR_OBJS)/%.o:	$(DIR_SRCS)/%.c
 #					@mkdir -p $(dir $@)
 #					gpp -n -U "" "" "(" "," ")" "(" ")" "@" "" -M "\n//@\w" "\n" " " " " "\n" "" "" +s "\"" "\"" "\\" +s "'" "'" "\\" -m --nostdinc $< > $@
 
-$(NAME):			$(OBJS) libft/libft.a
+$(NAME):			$(OBJS) libft/libft.a minilibx-linux/libmlx.a
 					$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
 clean:
 					$(MAKE) -C libft clean
+					$(MAKE) -C minilibx-linux clean
 					$(RM) -r $(DIR_OBJS)
 
 fclean:				clean

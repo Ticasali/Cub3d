@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   cross.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/08 15:20:25 by dderny            #+#    #+#             */
-/*   Updated: 2025/05/09 01:21:36 by dderny           ###   ########.fr       */
+/*   Created: 2025/05/09 02:16:20 by dderny            #+#    #+#             */
+/*   Updated: 2025/05/09 02:16:27 by dderny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
-# include "mlx.h"
-# include <mlx_int.h>
+#include "vec3d.h"
 
-typedef struct s_cub3d
+t_vec3d	vec3d_cross(t_vec3d a, t_vec3d b)
 {
-	int			width;
-	int			height;
-	t_img		*buffer;
-	void		*mlx;
-	void		*win;
-}	t_cub3d;
+	t_vec3d	result;
 
-#endif
+	result.x = a.y * b.z - a.z * b.y;
+	result.y = a.z * b.x - a.x * b.z;
+	result.z = a.x * b.y - a.y * b.x;
+	return (result);
+}

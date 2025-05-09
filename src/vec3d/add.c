@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   add.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/08 15:20:25 by dderny            #+#    #+#             */
-/*   Updated: 2025/05/09 01:21:36 by dderny           ###   ########.fr       */
+/*   Created: 2025/05/09 02:12:14 by dderny            #+#    #+#             */
+/*   Updated: 2025/05/09 02:12:17 by dderny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
-# include "mlx.h"
-# include <mlx_int.h>
+#include "vec3d.h"
 
-typedef struct s_cub3d
+t_vec3d	vec3d_add(t_vec3d a, t_vec3d b)
 {
-	int			width;
-	int			height;
-	t_img		*buffer;
-	void		*mlx;
-	void		*win;
-}	t_cub3d;
+	t_vec3d	result;
 
-#endif
+	result.x = a.x + b.x;
+	result.y = a.y + b.y;
+	result.z = a.z + b.z;
+	return (result);
+}
