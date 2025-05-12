@@ -6,13 +6,13 @@
 /*   By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 02:16:32 by dderny            #+#    #+#             */
-/*   Updated: 2025/05/09 02:16:38 by dderny           ###   ########.fr       */
+/*   Updated: 2025/05/11 14:43:58 by dderny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vec3d.h"
 
-double	vec3d_dot(t_vec3d a, t_vec3d b)
+inline double	vec3d_dot(const t_vec3d a, const t_vec3d b)
 {
 	return (a.x * b.x + a.y * b.y + a.z * b.z);
 }

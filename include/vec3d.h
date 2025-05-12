@@ -6,7 +6,7 @@
 /*   By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 01:55:05 by dderny            #+#    #+#             */
-/*   Updated: 2025/05/09 02:21:57 by dderny           ###   ########.fr       */
+/*   Updated: 2025/05/11 14:27:31 by dderny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,26 @@ typedef struct s_vec3d
 	double	z;
 }	t_vec3d;
 
-t_vec3d	vec3d_add(t_vec3d a, t_vec3d b);
-t_vec3d	vec3d_sub(t_vec3d a, t_vec3d b);
-t_vec3d	vec3d_mul(t_vec3d a, t_vec3d b);
-t_vec3d	vec3d_div(t_vec3d a, t_vec3d b);
-t_vec3d	vec3d_scale(t_vec3d a, double b);
-t_vec3d	vec3d_normalize(t_vec3d a);
-double	vec3d_dot(t_vec3d a, t_vec3d b);
-double	vec3d_dist(t_vec3d a, t_vec3d b);
-double	vec3d_sqrdist(t_vec3d a, t_vec3d b);
-double	vec3d_len(t_vec3d a);
-double	vec3d_sqrlen(t_vec3d a);
-t_vec3d	vec3d_invert(t_vec3d a, t_vec3d b);
-t_vec3d	vec3d_cross(t_vec3d a, t_vec3d b);
-int		vec3d_equal(t_vec3d a, t_vec3d b);
-int		vec3d_iszero(t_vec3d a, t_vec3d b);
-t_vec3d	vec3d_rotate(t_vec3d a, double angle, t_vec3d axis);
-t_vec3d	vec3d_reflect(t_vec3d a, t_vec3d normal);
-t_vec3d	vec3d_lerp(t_vec3d a, t_vec3d b, double t);
-t_vec3d	vec3d_slerp(t_vec3d a, t_vec3d b, double t);
-t_vec3d	vec3d_project(t_vec3d a, t_vec3d b);
-t_vec3d	vec3d_unproject(t_vec3d a, t_vec3d b);
+t_vec3d	vec3d_add(const t_vec3d a, const t_vec3d b);
+t_vec3d	vec3d_sub(const t_vec3d a, const t_vec3d b);
+t_vec3d	vec3d_mul(const t_vec3d a, const t_vec3d b);
+t_vec3d	vec3d_div(const t_vec3d a, const t_vec3d b);
+t_vec3d	vec3d_scale(const t_vec3d a, const double b);
+t_vec3d	vec3d_normalize(const t_vec3d a);
+double	vec3d_dot(const t_vec3d a, const t_vec3d b);
+double	vec3d_dist(const t_vec3d a, const t_vec3d b);
+double	vec3d_sqrdist(const t_vec3d a, const t_vec3d b);
+double	vec3d_len(const t_vec3d a);
+double	vec3d_sqrlen(const t_vec3d a);
+t_vec3d	vec3d_invert(const t_vec3d a, const t_vec3d b);
+t_vec3d	vec3d_cross(const t_vec3d a, const t_vec3d b);
+int		vec3d_equal(const t_vec3d a, const t_vec3d b);
+int		vec3d_iszero(const t_vec3d a, const t_vec3d b);
+t_vec3d	vec3d_rotate(const t_vec3d a, const double angle, const t_vec3d axis);
+t_vec3d	vec3d_reflect(const t_vec3d a, const t_vec3d normal);
+t_vec3d	vec3d_lerp(const t_vec3d a, const t_vec3d b, double t);
+t_vec3d	vec3d_slerp(t_vec3d a, const t_vec3d b, double t);
+t_vec3d	vec3d_project(const t_vec3d a, const t_vec3d b);
+t_vec3d	vec3d_unproject(const t_vec3d a, const t_vec3d b);
 
 #endif

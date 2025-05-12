@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color.h                                            :+:      :+:    :+:   */
+/*   normalize.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/09 02:30:13 by dderny            #+#    #+#             */
-/*   Updated: 2025/05/09 02:36:21 by dderny           ###   ########.fr       */
+/*   Created: 2025/05/09 23:06:29 by dderny            #+#    #+#             */
+/*   Updated: 2025/05/11 14:43:58 by dderny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COLOR_H
-# define COLOR_H
+#include "vec3d.h"
+#include <math.h>
 
-typedef union u_color
+inline t_vec3d	vec3d_normalize(const t_vec3d v)
 {
-	unsigned int	rgb;
-	struct
-	{
-		unsigned char	b;
-		unsigned char	g;
-		unsigned char	r;
-		unsigned char	a;
-	};
-}			t_color;
-
-#endif
+	double length = sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+	if (length == 0)
+		return (v);
+	return ((t_vec3d){v.x / length, v.y / length, v.z / length});
+}

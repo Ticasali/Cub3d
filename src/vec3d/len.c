@@ -6,14 +6,14 @@
 /*   By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 02:13:41 by dderny            #+#    #+#             */
-/*   Updated: 2025/05/09 02:13:50 by dderny           ###   ########.fr       */
+/*   Updated: 2025/05/11 14:43:58 by dderny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vec3d.h"
 #include <math.h>
 
-double	vec3d_len(t_vec3d a)
+inline double	vec3d_len(const t_vec3d a)
 {
 	return (sqrt(a.x * a.x + a.y * a.y + a.z * a.z));
 }
