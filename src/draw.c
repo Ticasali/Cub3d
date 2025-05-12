@@ -6,7 +6,7 @@
 /*   By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 13:41:56 by dderny            #+#    #+#             */
-/*   Updated: 2025/05/11 14:56:20 by dderny           ###   ########.fr       */
+/*   Updated: 2025/05/12 13:23:50 by dderny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 inline void put_pixel_color(const t_oimg img, const int x, const int y, const u_int color)
 {
-	img.data[y * img.size + x] = color;
+	img.data[y * img.size_line + x] = color;
 }
 
 void draw_line(const t_oimg img, const t_vec3d p1, const t_vec3d p2, const u_int color)

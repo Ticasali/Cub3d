@@ -6,7 +6,7 @@
 /*   By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 13:43:18 by dderny            #+#    #+#             */
-/*   Updated: 2025/05/11 14:45:02 by dderny           ###   ########.fr       */
+/*   Updated: 2025/05/12 13:23:20 by dderny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_oimg
 	int		size;
 } t_oimg;
 
-inline void put_pixel_color(const t_oimg img, const int x, const int y, u_int color);
+void put_pixel_color(const t_oimg img, const int x, const int y, u_int color);
 void draw_line(const t_oimg img, const t_vec3d p1, const t_vec3d p2, const u_int color);
 void draw_square(const t_oimg img, const t_vec3d p1, const t_vec3d p2, const u_int color);
 
