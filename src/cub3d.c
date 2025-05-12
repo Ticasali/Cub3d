@@ -6,7 +6,7 @@
 /*   By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 03:23:26 by dderny            #+#    #+#             */
-/*   Updated: 2025/05/12 13:14:46 by dderny           ###   ########.fr       */
+/*   Updated: 2025/05/12 15:17:18 by dderny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,8 +146,8 @@ void	init_window(t_cub3d *cub)
 static void init_scene(t_cub3d *cub3d)
 {
 	cub3d->camera.pos = (t_vec3d){0, 0, 0};
-	cub3d->camera.dir = (t_vec3d){0, 1, 0};
-	cub3d->camera.plane = (t_vec3d){0.33, 0, 0};
+	cub3d->camera.dir = (t_vec3d){1, 0, 0};
+	cub3d->camera.plane = (t_vec3d){0, 0.50, 0};
 }
 
 int	main(void)
