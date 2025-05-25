@@ -6,7 +6,7 @@
 /*   By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 02:04:17 by dderny            #+#    #+#             */
-/*   Updated: 2025/05/09 22:16:56 by dderny           ###   ########.fr       */
+/*   Updated: 2025/05/24 06:34:14 by dderny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 # define ROTATION_H
 # include "vec3d.h"
 
-typedef t_vec3d t_rotation;
+typedef t_vec3d t_rot;
 
-t_rotation	rotation_create(double x, double y, double z);
-t_rotation	rotation_add(t_rotation a, t_rotation b);
-t_rotation	rotation_sub(t_rotation a, t_rotation b);
-t_rotation	rotation_mult(t_rotation a, t_rotation b);
-t_rotation	rotation_div(t_rotation a, t_rotation b);
-t_rotation	rotation_scale(t_rotation a, double b);
-t_vec3d		rotation_tonormal(t_rotation r);
+t_rot	rotation_create(double x, double y, double z);
+t_rot	rotation_add(t_rot a, t_rot b);
+t_rot	rotation_sub(t_rot a, t_rot b);
+t_rot	rotation_mult(t_rot a, t_rot b);
+t_rot	rotation_div(t_rot a, t_rot b);
+t_rot	rotation_scale(t_rot a, double b);
+t_vec3d	rot_up(t_rot r);
+t_vec3d	rot_right(t_rot r);
+t_vec3d	rot_forward(t_rot r);
 
 #endif

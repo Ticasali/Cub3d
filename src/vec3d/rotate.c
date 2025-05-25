@@ -6,18 +6,18 @@
 /*   By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 22:17:50 by dderny            #+#    #+#             */
-/*   Updated: 2025/05/11 14:43:58 by dderny           ###   ########.fr       */
+/*   Updated: 2025/05/24 05:41:54 by dderny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vec3d.h"
 #include <math.h>
 
-inline t_vec3d	vec3d_rotate(const t_vec3d vec, const double angle, const t_vec3d axis)
+inline t_vec3d	vec3d_rotate(const t_vec3d vec, const float angle, const t_vec3d axis)
 {
-	double		cos_angle;
-	double		sin_angle;
-	double		dot_product;
+	float		cos_angle;
+	float		sin_angle;
+	float		dot_product;
 
 	cos_angle = cos(angle);
 	sin_angle = sin(angle);

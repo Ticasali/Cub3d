@@ -6,13 +6,14 @@
 /*   By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 15:20:25 by dderny            #+#    #+#             */
-/*   Updated: 2025/05/12 13:49:03 by dderny           ###   ########.fr       */
+/*   Updated: 2025/05/24 06:20:44 by dderny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 # include "draw.h"
+# include "rotation.h"
 # include "vec3d.h"
 
 typedef struct s_plane
@@ -26,8 +27,7 @@ typedef struct s_plane
 typedef struct  s_camera
 {
 	t_vec3d		pos;
-	t_vec3d		dir;
-	t_vec3d		plane;
+	t_rot		rot;
 }				t_camera;
 
 typedef struct s_cub3d
@@ -42,6 +42,8 @@ typedef struct s_cub3d
 	int			keys[16][2];
 	int			key_downs;
 	t_camera	camera;
+	float		cos[360];
+	float		sin[360];
 }	t_cub3d;
 
 typedef enum

@@ -6,13 +6,14 @@
 /*   By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 03:23:26 by dderny            #+#    #+#             */
-/*   Updated: 2025/05/12 15:17:18 by dderny           ###   ########.fr       */
+/*   Updated: 2025/05/24 21:48:43 by dderny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 #include <X11/X.h>
 #include <X11/Xutil.h>
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>
@@ -32,7 +33,7 @@ static void	time_update(t_cub3d *cub3d)
 	cub3d->delta_t = time - lasttime;
 	lasttime = time;
 	
-	printf("Time: %f, FPS: %d\n", cub3d->delta_t, (int)(1 / cub3d->delta_t));
+	//printf("Time: %f, FPS: %d\n", cub3d->delta_t, (int)(1 / cub3d->delta_t));
 }
 
 int	update(t_cub3d *cub3d)
@@ -145,9 +146,18 @@ void	init_window(t_cub3d *cub)
 
 static void init_scene(t_cub3d *cub3d)
 {
-	cub3d->camera.pos = (t_vec3d){0, 0, 0};
-	cub3d->camera.dir = (t_vec3d){1, 0, 0};
-	cub3d->camera.plane = (t_vec3d){0, 0.50, 0};
+	int	i;
+
+	i = 0;
+	while (i < 360)
+	{
+		cub3d->cos[i] = cos(i / 180. * M_PI);
+		cub3d->sin[i] = sin(i / 180. * M_PI);
+		i++;
+	}
+
+	cub3d->camera.pos = (t_vec3d){70, -110, 20};
+	cub3d->camera.rot = (t_rot){0, 0, 0};
 }
 
 int	main(void)
@@ -155,8 +165,8 @@ int	main(void)
 	t_cub3d	cub3d;
 
 	cub3d = (t_cub3d){0};
-	cub3d.width = 1920;
-	cub3d.height = 1080;
+	cub3d.width = 1920 / 2;
+	cub3d.height = 1080 / 2;
 	cub3d.mlx = mlx_init();
 	if (!cub3d.mlx)
 	{

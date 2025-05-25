@@ -6,7 +6,7 @@
 #    By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/25 01:28:43 by ticasali          #+#    #+#              #
-#    Updated: 2025/05/12 12:59:39 by dderny           ###   ########.fr        #
+#    Updated: 2025/05/24 04:43:29 by dderny           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,9 @@ SRCS =				$(DIR_SRCS)/vec3d/add.c 				\
 				$(DIR_SRCS)/vec3d/slerp.c 				\
 				$(DIR_SRCS)/vec3d/sqrlen.c 				\
 				$(DIR_SRCS)/vec3d/sub.c 				\
+				$(DIR_SRCS)/rotation/forward.c 				\
+				$(DIR_SRCS)/rotation/right.c 				\
+				$(DIR_SRCS)/rotation/up.c 				\
 				$(DIR_SRCS)/cub3d.c 				\
 				$(DIR_SRCS)/draw.c 				\
 				$(DIR_SRCS)/plan.c 				\

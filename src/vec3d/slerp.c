@@ -6,20 +6,20 @@
 /*   By: dderny <dderny@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 02:18:40 by dderny            #+#    #+#             */
-/*   Updated: 2025/05/09 02:18:49 by dderny           ###   ########.fr       */
+/*   Updated: 2025/05/24 05:41:54 by dderny           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vec3d.h"
 #include <math.h>
 
-t_vec3d	vec3d_slerp(t_vec3d a, t_vec3d b, double t)
+t_vec3d	vec3d_slerp(t_vec3d a, t_vec3d b, float t)
 {
 	t_vec3d	result;
-	double		theta;
-	double		sin_theta;
-	double		sin_atheta;
-	double		sin_btheta;
+	float		theta;
+	float		sin_theta;
+	float		sin_atheta;
+	float		sin_btheta;
 
 	if (t < 0)
 		t = 0;
